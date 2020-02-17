@@ -49,38 +49,13 @@ module.exports = {
 		return response.json(dev);
 	},
 
-	async update(request, response){
-		const {github_username, techs, latitude, longitude} = request.body;
-
-		let dev = await Dev.findOne({github_username});
-
-		if(dev)	{		
-			const techsArray = parseStringAsArray(techs);
-
-			const location = {
-				type: 'Point',
-				coordinates: [longitude, latitude]
-			};
-
-
-			dev = await dev.updateOne({
-				techs: techsArray,
-				location,
-			})
-		};
-
-		return response.json({
-			modifiedCount: dev.nModified,
-            ok: dev.ok
-		});
-
-	},
-
 	async destroy(request, response){
-		const {github_username} = request.query;
+		const _id = request.query._id;
+		const dev = await Dev.findById(_id);
 
-		await Dev.deleteOne({github_username});
-
-		return response.json();
+		if(dev != null){
+			await Dev.deleteOne({_id});
+			return response.json({message: "Successful"});
+		}
 	}
 };

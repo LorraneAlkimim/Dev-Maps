@@ -23,11 +23,20 @@ function App() {
     loadDevs();
   }, []);
 
+
   async function handleAddDev(data) {
-    const response = await api.post('/devs', data)
-  
-    setDevs([...devs, response.data]);
+    const response = await api.post('/devs', data);
+   
+      setDevs([...devs, response.data])
   }
+
+
+  async function deleteDev(_id) {
+
+      await api.delete(`http://localhost:3333/devs:_id?_id=${_id}`);
+      setDevs(devs.filter(dev=>dev._id!==_id));
+  } 
+
 
   return (
     <div id="app">
@@ -39,7 +48,7 @@ function App() {
       <main>
         <ul>
           {devs.map( dev => (
-              <DevItem key={dev._id} dev={dev} />
+              <DevItem key={dev._id} dev={dev} deleteDev={deleteDev} />
             ))}
         </ul>
       </main>

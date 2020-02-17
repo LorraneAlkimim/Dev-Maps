@@ -9,7 +9,8 @@ li.dev-item{
 li.dev-item header {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: all;
+	justify-content: space-between;
 }
 
 li.dev-item header img {
@@ -20,6 +21,7 @@ li.dev-item header img {
 
 li.dev-item header .user-info {
 	margin-left: 10px;
+	max-width: 200px;
 }
 
 .user-info strong {
@@ -51,3 +53,23 @@ li.dev-item a:hover {
 	color: #5a2ea6;
 }
 
+#dev-content {
+	display: flex;
+	direction: row;
+}
+
+.icons-content {
+	display: flex;
+	width: 40px;
+	justify-content: space-between;
+}
+
+.icons {
+	cursor: pointer;
+	
+}
+
+.icons:hover {
+	margin-top: 2px;
+	
+}
