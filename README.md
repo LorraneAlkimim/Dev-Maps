@@ -6,14 +6,19 @@
   🚀 Semana OmniStack #10
 </h4>
 
-<br/>
+## 📌 Projeto
+Este projeto visa conectar desenvolvedores em um raio de 10km, facilitando a busca através das tecnologias com que trabalham.
 
-> ## 💻 Tecnologias
+<p align="center">
+ <img alt="Frontend" src="images/frontend.png"> &nbsp;
+ <img alt="Mobile" src="images/mobile-maps.jpeg" width="421">
+ <img alt="Mobile" src="images/mobile-profile.jpeg" width="421">
+</p>
 
+## 💻 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/)
 - [React](https://reactjs.org)
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
-
